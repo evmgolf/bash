@@ -14,14 +14,14 @@ contract BashTest is Test {
   }
 
   function testEcho(uint data) public {
-    uint result = abi.decode(bash.run(bytes.concat("echo ", data.decimal(), "|cast --to-uint256"), ""), (uint));
+    uint result = abi.decode(bash.run(bytes.concat("echo ", data.decimal(), "|cast --to-uint256")), (uint));
     assertEq(result, data);
   }
 
   function testWrite(uint data) public {
     bytes memory filename = bytes.concat("/tmp/", data.decimal());
     bash.run(bytes.concat("echo ", data.decimal()), filename);
-    uint result = abi.decode(bash.run(bytes.concat("cat ", filename, "|cast --to-uint256"), ""), (uint));
+    uint result = abi.decode(bash.run(bytes.concat("cat ", filename, "|cast --to-uint256")), (uint));
     assertEq(result, data);
   }
 }
