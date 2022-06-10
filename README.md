@@ -1,5 +1,7 @@
 # Bash - A simple module for executing bash scripts via foundry ffi
 
+[![foundry-test](https://github.com/evmgolf/bash/actions/workflows/main.yml/badge.svg)](https://github.com/evmgolf/bash/actions/workflows/main.yml)
+
 ## Usage 
 Every ffi call MUST return a hexadecimal encoded result (including empty) to be processed
 
